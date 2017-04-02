@@ -1,0 +1,50 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gener emulator pzu vu4 mux DCreg LowHi and goi vs1 andno
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+emulator: emulator.bpr
+  $(MAKE)
+
+gener: ITEMS.LIB\gener\gener.bpr
+  $(MAKE)
+
+pzu: ITEMS.LIB\pzu\pzu.bpr
+  $(MAKE)
+
+vu4: ITEMS.LIB\vu4\vu4.bpr
+  $(MAKE)
+
+mux: ITEMS.LIB\mux\mux.bpr
+  $(MAKE)
+
+DCreg: ITEMS.LIB\DCreg\DCreg.bpr
+  $(MAKE)
+
+LowHi: ITEMS.LIB\lowhi\LowHi.bpr
+  $(MAKE)
+
+and: ITEMS.LIB\and\and.bpr
+  $(MAKE)
+
+goi: ITEMS.LIB\goi\goi.bpr
+  $(MAKE)
+
+vs1: ITEMS.LIB\vs1\vs1.bpr
+  $(MAKE)
+
+andno: ITEMS.LIB\andno\andno.bpr
+  $(MAKE)
+
+
