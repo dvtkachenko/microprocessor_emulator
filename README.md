@@ -1,6 +1,6 @@
 The object of development is a system for modeling the operation of digital computing structures at a functional level. 
 
-The software package is developed using visual programming tools Builder C ++ and Delphi.
+The software package is developed using visual programming tools Builder C ++ and Delphi with using DLL modules. 
 
 In this project were developed algorithms for modeling the operation of digital computing circuits and program modules of the system.
 
