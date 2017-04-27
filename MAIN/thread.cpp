@@ -47,14 +47,14 @@ void __fastcall TZastavkaFhread::Execute()
 {
   //---- Place thread code here ----
 
-  // Задержка для демонстрации заставки
+  // Р—Р°РґРµСЂР¶РєР° РґР»СЏ РґРµРјРѕРЅСЃС‚СЂР°С†РёРё Р·Р°СЃС‚Р°РІРєРё
   unsigned long CurTime,Delay;
 
   Create = CREATE_ZAST;
   Synchronize((TThreadMethod)&CreateDestroy);
   //
   CurTime = GetTickCount()/1000;
-  Delay = 3; // Время задержки в секундах
+  Delay = 3; // Р’СЂРµРјСЏ Р·Р°РґРµСЂР¶РєРё РІ СЃРµРєСѓРЅРґР°С…
   while ((GetTickCount()/1000)<(CurTime+Delay));
   //
   Create = DESTROY_ZAST;

@@ -27,33 +27,33 @@ type
 
 var
   Mem_EditForm: TMem_EditForm;
-  Buffer:string;  { буфер исходной строки }
+  Buffer:string;  { Р±СѓС„РµСЂ РёСЃС…РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё }
 
 implementation
 
 {$R *.DFM}
 
 procedure TMem_EditForm.FormShow(Sender: TObject);
-{ Копирование исходной строки в буфер для возможного восстановления }
+{ РљРѕРїРёСЂРѕРІР°РЅРёРµ РёСЃС…РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё РІ Р±СѓС„РµСЂ РґР»СЏ РІРѕР·РјРѕР¶РЅРѕРіРѕ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ }
 begin
   Buffer:=MaskEditMem.Text;
 end;
 
 procedure TMem_EditForm.OkButtonEditMemClick(Sender: TObject);
-{ Окончание редактирования }
+{ РћРєРѕРЅС‡Р°РЅРёРµ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ }
 begin
   Close;
 end;
 
 procedure TMem_EditForm.CancelButtonEditMemClick(Sender: TObject);
-{ Копирование исходной строки из буфера для отмены редактирования }
+{ РљРѕРїРёСЂРѕРІР°РЅРёРµ РёСЃС…РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё РёР· Р±СѓС„РµСЂР° РґР»СЏ РѕС‚РјРµРЅС‹ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ }
 begin
   MaskEditMem.Text:=Buffer;
   Close;
 end;
 
 procedure TMem_EditForm.FormKeyPress(Sender: TObject; var Key: Char);
-{ Настройка редактора на пропуск только 16-ричных чисел }
+{ РќР°СЃС‚СЂРѕР№РєР° СЂРµРґР°РєС‚РѕСЂР° РЅР° РїСЂРѕРїСѓСЃРє С‚РѕР»СЊРєРѕ 16-СЂРёС‡РЅС‹С… С‡РёСЃРµР» }
 begin
   Key:=UpCase(Key);
   if not(Key in ['0'..'9','A'..'F'])and(Key>=#32) then
@@ -64,34 +64,34 @@ begin
 end;
 
 procedure TMem_EditForm.FormCloseQuery(Sender: TObject;var CanClose: Boolean);
-{ Проверка корректности введенных данных }
+{ РџСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё РІРІРµРґРµРЅРЅС‹С… РґР°РЅРЅС‹С… }
 begin
   if length(MaskEditMem.Text)<MaskEditMem.MaxLength then
     begin
-      MessageDlg('Недостаточная длина редактируемого поля',mtError,[mbOk],0);
+      MessageDlg('РќРµРґРѕСЃС‚Р°С‚РѕС‡РЅР°СЏ РґР»РёРЅР° СЂРµРґР°РєС‚РёСЂСѓРµРјРѕРіРѕ РїРѕР»СЏ',mtError,[mbOk],0);
       CanClose:=False;
     end;
 end;
 
 procedure TMem_EditForm.InitMem_EditForChip(Var InLabel,NameLabel:TLabel;
                                  Var OutRezult:LongInt;MaxValue:LongInt);
-{ Настройка универсального редактора для редактирования содержимого  }
-{ регистров микропроцессора }
+{ РќР°СЃС‚СЂРѕР№РєР° СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР° РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ  }
+{ СЂРµРіРёСЃС‚СЂРѕРІ РјРёРєСЂРѕРїСЂРѕС†РµСЃСЃРѕСЂР° }
 Var  ErrorCode:Integer;
      BufOut:LongInt;
 begin
-  MemoryEditLabel.Caption:='Содержимое регистра '+
+  MemoryEditLabel.Caption:='РЎРѕРґРµСЂР¶РёРјРѕРµ СЂРµРіРёСЃС‚СЂР° '+
                             NameLabel.Caption;
   MaskEditMem.Text:= InLabel.Caption;
   MaskEditMem.MaxLength:=Length(InLabel.Caption);
-  {  Проверка корректности ввода данных }
+  {  РџСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё РІРІРѕРґР° РґР°РЅРЅС‹С… }
   repeat
     ShowModal;
     BufOut:=HexToLong(MaskEditMem.Text,ErrorCode);
     if not((BufOut<=MaxValue)or(MaxValue=0)) then
-      MessageDlg('Недопустимое значение редактируемого поля',mtError,[mbOk],0);
+      MessageDlg('РќРµРґРѕРїСѓСЃС‚РёРјРѕРµ Р·РЅР°С‡РµРЅРёРµ СЂРµРґР°РєС‚РёСЂСѓРµРјРѕРіРѕ РїРѕР»СЏ',mtError,[mbOk],0);
   Until (BufOut<=MaxValue)or(MaxValue=0);
-  { Загрузка измененных значений }
+  { Р—Р°РіСЂСѓР·РєР° РёР·РјРµРЅРµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№ }
   InLabel.Caption:=MaskEditMem.Text;
   OutRezult:=HexToLong(InLabel.Caption,ErrorCode);
 end;

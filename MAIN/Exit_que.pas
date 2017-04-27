@@ -33,21 +33,21 @@ implementation
 {$R *.DFM}
 
 procedure TExit_queForm.FormShow(Sender: TObject);
-{ Формирование сообщений запроса }
+{ Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃРѕРѕР±С‰РµРЅРёР№ Р·Р°РїСЂРѕСЃР° }
 begin
   ExitLabel1.Caption:=NameClose1;
   NameLabel .Caption:=NameClose2;
 end;
 
 procedure TExit_queForm.YesButtonClick(Sender: TObject);
-{ Разрешение закрытия окна }
+{ Р Р°Р·СЂРµС€РµРЅРёРµ Р·Р°РєСЂС‹С‚РёСЏ РѕРєРЅР° }
 begin
   CloseFlag:=True;
   Close;
 end;
 
 procedure TExit_queForm.NoButtonClick(Sender: TObject);
-{ Запрещение закрытия окна }
+{ Р—Р°РїСЂРµС‰РµРЅРёРµ Р·Р°РєСЂС‹С‚РёСЏ РѕРєРЅР° }
 begin
   CloseFlag:=False;
   Close;

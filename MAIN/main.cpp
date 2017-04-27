@@ -29,8 +29,8 @@ void __fastcall TMainForm::HelpAboutClick(TObject *Sender)
 
 void __fastcall TMainForm::FormCloseQuery(TObject *Sender, bool &CanClose)
 {
-  Exit_queForm->NameClose1 = "Вы действительно хотите закрыть";
-  Exit_queForm->NameClose2 = " Программу-эмулятор";
+  Exit_queForm->NameClose1 = "Р’С‹ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ Р·Р°РєСЂС‹С‚СЊ";
+  Exit_queForm->NameClose2 = " РџСЂРѕРіСЂР°РјРјСѓ-СЌРјСѓР»СЏС‚РѕСЂ";
   Exit_queForm->ShowModal();
   CanClose = Exit_queForm->CloseFlag;
 }
@@ -116,9 +116,9 @@ void __fastcall TMainForm::WorkFullRunClick(TObject *Sender)
 
   switch(RunScheme->GetTraceLevel())
     {
-      case KVANT_LEVEL : EnterForm->TKLabel->Caption = "(в квантах)";break;
-      case MIKROTAKT_LEVEL : EnterForm->TKLabel->Caption = "(в микротактах)";break;
-      case TAKT_LEVEL : EnterForm->TKLabel->Caption = "(в тактах)";break;
+      case KVANT_LEVEL : EnterForm->TKLabel->Caption = "(РІ РєРІР°РЅС‚Р°С…)";break;
+      case MIKROTAKT_LEVEL : EnterForm->TKLabel->Caption = "(РІ РјРёРєСЂРѕС‚Р°РєС‚Р°С…)";break;
+      case TAKT_LEVEL : EnterForm->TKLabel->Caption = "(РІ С‚Р°РєС‚Р°С…)";break;
     }
 
   if(EnterForm->ShowModal() == mrOk)
@@ -133,7 +133,7 @@ void __fastcall TMainForm::WorkFullRunClick(TObject *Sender)
                 {
                   if(lpMSG.wParam == VK_ESCAPE)
                     {
-                      throw "Моделирование прервано";
+                      throw "РњРѕРґРµР»РёСЂРѕРІР°РЅРёРµ РїСЂРµСЂРІР°РЅРѕ";
                     }
                 }
               RunScheme->Run();
@@ -142,13 +142,13 @@ void __fastcall TMainForm::WorkFullRunClick(TObject *Sender)
       catch(const char *message)
         {
           Scheme->Update();
-          MessageDlg("Моделирование было прервано"
-                     " по желанию пользователя", mtInformation,
+          MessageDlg("РњРѕРґРµР»РёСЂРѕРІР°РЅРёРµ Р±С‹Р»Рѕ РїСЂРµСЂРІР°РЅРѕ"
+                     " РїРѕ Р¶РµР»Р°РЅРёСЋ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ", mtInformation,
                        TMsgDlgButtons() << mbOK , 0);
         }
     }
   Scheme->Update();
-//  MessageDlg("Моделирование завершено", mtConfirmation,
+//  MessageDlg("РњРѕРґРµР»РёСЂРѕРІР°РЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ", mtConfirmation,
 //             TMsgDlgButtons() << mbOK , 0);
 }
 //---------------------------------------------------------------------------
@@ -177,8 +177,8 @@ void __fastcall TMainForm::WindowShowAllClick(TObject *Sender)
 
 void __fastcall TMainForm::TuneResetSchemeClick(TObject *Sender)
 {
-  Exit_queForm->NameClose1 = "Вы действительно хотите установить";
-  Exit_queForm->NameClose2 = " моделируемую схему в начальное состояние";
+  Exit_queForm->NameClose1 = "Р’С‹ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ";
+  Exit_queForm->NameClose2 = " РјРѕРґРµР»РёСЂСѓРµРјСѓСЋ СЃС…РµРјСѓ РІ РЅР°С‡Р°Р»СЊРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ";
   Exit_queForm->ShowModal();
   if (Exit_queForm->CloseFlag)
     {

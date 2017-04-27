@@ -32,7 +32,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
        {
         ZastavkaFhread = new TZastavkaFhread(false);
         Application->Initialize();
-        Application->Title = "Ýìóëÿòîð ÝÂÌ";
+        Application->Title = "Ð­Ð¼ÑƒÐ»ÑÑ‚Ð¾Ñ€ Ð­Ð’Ðœ";
         Application->CreateForm(__classid(TMainForm), &MainForm);
         Application->CreateForm(__classid(TAboutForm), &AboutForm);
         Application->CreateForm(__classid(TExit_queForm), &Exit_queForm);

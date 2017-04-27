@@ -28,10 +28,10 @@ void __fastcall TListModelForm::ModelCheckListBoxClickCheck(
   char NumItem[30];
   char *ptr;
   int NumModelItem;
-  // ïîëó÷àåì ñòðîêó èç ñïèñêà ñ íîìåðîì è èìåíåì ìîäåëèðóåìîãî ýë-òà
+  // Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¸Ð· ÑÐ¿Ð¸ÑÐºÐ° Ñ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼ Ð¸ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ð¼Ð¾Ð´ÐµÐ»Ð¸Ñ€ÑƒÐµÐ¼Ð¾Ð³Ð¾ ÑÐ»-Ñ‚Ð°
   strcpy(NumItem,ModelCheckListBox->Items->Strings[ModelCheckListBox->ItemIndex].c_str());
   ptr = strtok(NumItem," ");
-  // èçâëåêàåì íîìåð ýë-òà èç ñòðîêè âèäà -> "Dnnn"
+  // Ð¸Ð·Ð²Ð»ÐµÐºÐ°ÐµÐ¼ Ð½Ð¾Ð¼ÐµÑ€ ÑÐ»-Ñ‚Ð° Ð¸Ð· ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð²Ð¸Ð´Ð° -> "Dnnn"
   NumModelItem = atoi(ptr + 1);
   if(ModelCheckListBox->Checked[ModelCheckListBox->ItemIndex])
     {

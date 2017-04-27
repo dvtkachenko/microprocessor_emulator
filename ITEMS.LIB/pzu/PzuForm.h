@@ -66,8 +66,8 @@ public:		// User declarations
     int WordLength;
     int MemSize;
 
-    int CurrentAddress;   // адрес текущей строки памяти
-    int TopAddress;       // адрес верхней видимой в окне строки памяти
+    int CurrentAddress;   // Р°РґСЂРµСЃ С‚РµРєСѓС‰РµР№ СЃС‚СЂРѕРєРё РїР°РјСЏС‚Рё
+    int TopAddress;       // Р°РґСЂРµСЃ РІРµСЂС…РЅРµР№ РІРёРґРёРјРѕР№ РІ РѕРєРЅРµ СЃС‚СЂРѕРєРё РїР°РјСЏС‚Рё
     bool UndefAddressFlag;
     //
     void __fastcall ShowAdrLabel(void);

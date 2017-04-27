@@ -1,4 +1,4 @@
- // TVs2.hpp  -  Объявление класса TVs2 моделируемого элемента - БИС К1804ВС2
+ // TVs2.hpp  -  РћР±СЉСЏРІР»РµРЅРёРµ РєР»Р°СЃСЃР° TVs2 РјРѕРґРµР»РёСЂСѓРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° - Р‘РРЎ Рљ1804Р’РЎ2
 
 # ifndef __TVS2_HPP
 # define __TVS2_HPP 1
@@ -68,17 +68,17 @@
 	void SLO(unsigned long RLow,unsigned long SLow,unsigned long *FLow,unsigned long RHi,unsigned long SHi,unsigned long *FHi,unsigned long C0,unsigned SekCount);
 
       public:
-        // Конструктор
+        // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	TVs2(int Number);
 
-	// Деструктор
+	// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	~TVs2();
 
-        // Процедура инициализации
+        // РџСЂРѕС†РµРґСѓСЂР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё
         virtual int Init(string80 Array[]);
 
-	// Моделирование функций БИС К1804ВС2
-        // в дискретные моменты времени(кванты)
+	// РњРѕРґРµР»РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёР№ Р‘РРЎ Рљ1804Р’РЎ2
+        // РІ РґРёСЃРєСЂРµС‚РЅС‹Рµ РјРѕРјРµРЅС‚С‹ РІСЂРµРјРµРЅРё(РєРІР°РЅС‚С‹)
 	void LoadParam(void);
 	void StoreParam(void);
 	virtual void Run(void);

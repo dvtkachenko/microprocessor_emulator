@@ -8,7 +8,7 @@ Function HexToLong(S:string;Var ErrorCode:integer):LongInt;
 implementation
 
 function HexToLong(S:string;Var ErrorCode:integer):LongInt;
-{ Преобразование из 16-ричной строки в число }
+{ С•СЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РёР· 16-СЂРёС‡РЅРѕР№ СЃС‚СЂРѕРєРё РІ С‡РёСЃР»Рѕ }
 Var Ves,OutSum,i,Buf:LongInt;
 begin
   Ves:=1;
@@ -40,7 +40,7 @@ begin
       Ves:=Ves*16;
     end;
   HexToLong:=OutSum;
-end; { Конец преобразования из 16-ричной строки в число }
+end; { В РѕРЅРµС† РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёВ¤ РёР· 16-СЂРёС‡РЅРѕР№ СЃС‚СЂРѕРєРё РІ С‡РёСЃР»Рѕ }
 
 END.
 

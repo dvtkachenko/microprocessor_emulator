@@ -32,41 +32,41 @@ implementation
 {$R *.DFM}
 
 procedure THelpForm.FormCreate(Sender: TObject);
-{ Поиск и загрузка файлов помощи }
+{ РџРѕРёСЃРє Рё Р·Р°РіСЂСѓР·РєР° С„Р°Р№Р»РѕРІ РїРѕРјРѕС‰Рё }
 {Var SR:TSearchRec;
-    H1,H2,H3:Boolean;{ Флаги извещают о присутствии файлов помощи }
+    H1,H2,H3:Boolean;{ Р¤Р»Р°РіРё РёР·РІРµС‰Р°СЋС‚ Рѕ РїСЂРёСЃСѓС‚СЃС‚РІРёРё С„Р°Р№Р»РѕРІ РїРѕРјРѕС‰Рё }
 begin
-  { файл помощи по работе с эмулятором }
+  { С„Р°Р№Р» РїРѕРјРѕС‰Рё РїРѕ СЂР°Р±РѕС‚Рµ СЃ СЌРјСѓР»СЏС‚РѕСЂРѕРј }
  { if FindFirst('ID1\work.txt',$3F,SR)<>0 then
     begin
-      MessageDlg('Отсутствует файл помощи по работе с эмулятором',mtInformation,[mbOk],0);
+      MessageDlg('РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ С„Р°Р№Р» РїРѕРјРѕС‰Рё РїРѕ СЂР°Р±РѕС‚Рµ СЃ СЌРјСѓР»СЏС‚РѕСЂРѕРј',mtInformation,[mbOk],0);
       H1:=False;
     end
   else
     WorkList.Items.LoadFromFIle('ID1\work.txt');
-  { файл помощи по возможностям программы }
+  { С„Р°Р№Р» РїРѕРјРѕС‰Рё РїРѕ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЏРј РїСЂРѕРіСЂР°РјРјС‹ }
 {  if FindFirst('ID1\vozm.txt',$3F,SR)<>0 then
     begin
-      MessageDlg('Отсутствует файл помощи по возможностям программы',mtInformation,[mbOk],0);
+      MessageDlg('РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ С„Р°Р№Р» РїРѕРјРѕС‰Рё РїРѕ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЏРј РїСЂРѕРіСЂР°РјРјС‹',mtInformation,[mbOk],0);
       H3:=False;
     end
   else
     VozmList.Items.LoadFromFIle('ID1\vozm.txt');
-  { файл помощи по прошивке МПП }
+  { С„Р°Р№Р» РїРѕРјРѕС‰Рё РїРѕ РїСЂРѕС€РёРІРєРµ РњРџРџ }
 {  if FindFirst('ID1\mpp.txt',$3F,SR)<>0 then
     begin
-      MessageDlg('Отсутствует файл помощи по прошивке МПП',mtInformation,[mbOk],0);
+      MessageDlg('РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ С„Р°Р№Р» РїРѕРјРѕС‰Рё РїРѕ РїСЂРѕС€РёРІРєРµ РњРџРџ',mtInformation,[mbOk],0);
       H3:=False;
     end
   else
     MppList.Items.LoadFromFIle('ID1\mpp.txt');}
-  { Формирование признака наличия хотя-бы одного файла помощи }
+  { Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РїСЂРёР·РЅР°РєР° РЅР°Р»РёС‡РёСЏ С…РѕС‚СЏ-Р±С‹ РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р° РїРѕРјРѕС‰Рё }
 {  HelpExistFlag := H1 or H2 or H3;}
 end;
 
 procedure THelpForm.HelpNotebookChange(Sender: TObject; NewTab: Integer;
                                        var AllowChange: Boolean);
-{ Проверка нажатия на страницу с именем "Закрыть" }
+{ РџСЂРѕРІРµСЂРєР° РЅР°Р¶Р°С‚РёСЏ РЅР° СЃС‚СЂР°РЅРёС†Сѓ СЃ РёРјРµРЅРµРј "Р—Р°РєСЂС‹С‚СЊ" }
 begin
   if NewTab=3 then
     begin
@@ -76,7 +76,7 @@ begin
 end;
 
 procedure THelpForm.FormKeyPress(Sender: TObject; var Key: Char);
-{ Закрывать по Esc }
+{ Р—Р°РєСЂС‹РІР°С‚СЊ РїРѕ Esc }
 begin
   if Key=#27 then Close;
 end;
